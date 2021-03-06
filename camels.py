@@ -21,6 +21,9 @@ class Game:
         for camel, steps in self.die.roll_finish_round():
             self.board.move_camel(camel, steps)
 
+    def leaderboard(self):
+        return flatten_state(self.board.state.state)
+
     def _infer_camels(self, camels, state):
         if state is not None:
             return self._extract_camels(state)
